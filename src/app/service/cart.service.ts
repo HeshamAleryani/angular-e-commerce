@@ -21,7 +21,6 @@ export class CartService {
   addToCart(product: IProduct) {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
-    console.log(this.cartItemList);
   }
   getTotalPrice(): number {
     let grandTotal = 0;
