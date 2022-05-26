@@ -1,0 +1,7 @@
+.blog-container {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  padding: 20px;
+  border-radius: 10px;
+}
