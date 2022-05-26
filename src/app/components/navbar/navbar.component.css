@@ -158,3 +158,22 @@ header .menu {
   color: red;
   font-size: 20px;
 }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  min-width: 300px;
+}
+
+.dropdown-content a {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(87, 76, 76);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

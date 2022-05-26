@@ -1,3 +1,5 @@
+import { ApiService } from './../../service/api.service';
+import { IProduct } from './../../models/interface.product';
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './../../service/cart.service';
 
@@ -7,18 +9,20 @@ import { CartService } from './../../service/cart.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  public filterCategory: any;
+  public productList!: Array<IProduct>;
   public totalItem: number = 0;
   public searchTerm: string = '';
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private api: ApiService) {}
 
   ngOnInit(): void {
     this.cartService.getProducts().subscribe((res) => {
       this.totalItem = res.length;
     });
   }
+
   search(event: any) {
     this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
     this.cartService.search.next(this.searchTerm);
   }
 }

@@ -1,6 +1,44 @@
+<div class="ui menu">
+  <a (click)="filter('')" class="item">
+    <button class="ui inverted orange button">
+      <img
+        style="width: 200px; height: 150px"
+        src="https://www.edesk.com/wp-content/uploads/2021/03/find-trending-products-sell-ecommerce.png"
+      />
+    </button>
+  </a>
+
+  <a (click)="filter('fashion')" class="item">
+    <button class="ui inverted violet button">
+      <div class="ui small image">
+        <img
+          style="width: 200px; height: 150px"
+          src="https://i.pinimg.com/564x/dc/6e/2c/dc6e2cfeee4125429ab1c8e800dbc4ec.jpg"
+        />
+      </div>
+    </button> </a
+  ><a (click)="filter('electronics')" class="item">
+    <button class="ui inverted blue button">
+      <img
+        style="width: 200px; height: 150px"
+        src="https://ecommerce.ccc2020.fr/wp-content/uploads/2020/10/electronic-gadgets.jpeg"
+      />
+    </button> </a
+  ><a class="item" (click)="filter('jewelery')">
+    <button class="ui inverted yellow button">
+      <img
+        style="width: 200px; height: 150px"
+        src="https://seturibijuterii.ro/41-large_default/set-bijuterii-sm4-02-long-jewelery.jpg"
+      />
+    </button>
+  </a>
+</div>
+
 <div class="container-card">
   <div class="container-body" style="display: flex; flex-wrap: wrap">
-    <ng-container *ngFor="let item of productList | filter: searchKey:'title'">
+    <ng-container
+      *ngFor="let item of filterCategory | filter: searchKey:'title'"
+    >
       <div class="ui card">
         <a [routerLink]="item.link" [state]="{ product: item }">
           <img src="{{ item.image }}" alt="{{ item.title }}" />
