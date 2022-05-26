@@ -1,0 +1,32 @@
+<main class="container">
+  <!-- Left Column / Headphones Image -->
+  <div class="left-column">
+    <img style="width: 500px" src="{{ product.image }}" alt="" />
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-column">
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>{{ product.category }}</span>
+      <h1>{{ product.title }}</h1>
+      <p>
+        {{ product.description }}
+      </p>
+    </div>
+
+    <!-- Product Configuration -->
+
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>{{ product.price }}lei</span>
+      <button
+        (click)="addToCart(product)"
+        class="ui inverted green button"
+        style="border-radius: 5rem"
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</main>

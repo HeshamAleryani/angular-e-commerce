@@ -1,0 +1,39 @@
+<div class="container">
+  <header>
+    <input type="checkbox" name="" id="chk1" class="chek-box" />
+    <div class="logo"><h1>E-Commerce</h1></div>
+    <div class="search-box">
+      <form action="">
+        <input
+          type="text"
+          name="search"
+          id="srch"
+          [(ngModel)]="searchTerm"
+          (keyup)="search($event)"
+          placeholder="Search"
+        />
+        <button type="submit"><i class="search icon"></i></button>
+      </form>
+    </div>
+    <ul>
+      <li><a routerLink="products">Home</a></li>
+      <li><a routerLink="cart">Cart</a></li>
+      <li><a href="">Blog</a></li>
+      <li>
+        <div class="cart-button">
+          <i
+            routerLink="cart"
+            style="font-size: 20px; color: white"
+            class="shopping cart icon"
+          ></i>
+          <div class="numbers">{{ totalItem }}</div>
+        </div>
+      </li>
+    </ul>
+    <div class="menu">
+      <label for="chk1">
+        <i class="list ul icon"></i>
+      </label>
+    </div>
+  </header>
+</div>

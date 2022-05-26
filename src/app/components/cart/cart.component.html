@@ -1,0 +1,70 @@
+<ng-container *ngIf="products.length != 0">
+  <div class="card-table">
+    <div class="div cart-products">
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th>Sr.No</th>
+            <th>Product Name</th>
+            <th>Product Image</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of products; let i = index">
+            <td data-label="No">{{ item + 1 }}</td>
+            <td data-label="Name">{{ item.title }}</td>
+            <td data-label="image">
+              <img style="width: 150px" src="{{ item.image }}" />
+            </td>
+            <td data-label="description">{{ item.description }}</td>
+            <td data-label="price">{{ item.price }}</td>
+            <td data-label="quantity">{{ item.quantity }}</td>
+            <td data-label="Total">{{ item.total }}</td>
+
+            <td data-label="action">
+              <button (click)="removeItem(item)" class="ui red button">
+                <i class="trash alternate icon" Delete></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4"></td>
+            <td><button class="ui positive button active">CheckOut</button></td>
+            <td>
+              <button (click)="empyCart()" class="ui red button">Empty</button>
+            </td>
+            <td>
+              <button routerLink="/products" class="ui primary button">
+                Shope more
+              </button>
+            </td>
+            <td>
+              <strong> Total: {{ total }} lei</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length === 0">
+  <div class="ui card">
+    <div class="content"></div>
+    <div class="center">
+      <img
+        src="https://freepikpsd.com/file/2019/10/empty-cart-png-Transparent-Images.png"
+        alt=""
+      />
+      <h4>Add to the product now!</h4>
+      <button routerLink="/products" class="positive fluid ui button">
+        Check our Shop
+      </button>
+    </div>
+  </div>
+</ng-container>

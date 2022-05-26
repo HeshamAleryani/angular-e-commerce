@@ -1,0 +1,50 @@
+.ui.card {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  height: 60vh;
+  width: 2000px;
+  align-items: center;
+  margin: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+}
+
+.center {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: large;
+
+}
+
+.center img {
+  margin-bottom: 50px;
+}
+
+.fluid.ui.button {
+  font-size: large;
+}
+
+h4 {
+  font-size: larger;
+}
+
+h3 {
+  font-size: larger;
+}
+
+
+.ui.table {
+  margin: 20px;
+  padding: 20px;
+  max-width: 95%;
+  width: 95%;
+  border-radius: 1.285714rem;
+  border: 11px solid rgba(34, 36, 38, .15);
+}
