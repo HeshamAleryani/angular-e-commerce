@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=https://HeshamAleryani.github.io/angular-e-commerce/",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -37,5 +37,6 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "serve": "^13.0.2",
     "typescript": "~4.6.2"
-  }
+  },
+  "homepage": "./"
 }
