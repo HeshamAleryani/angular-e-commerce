@@ -1,7 +1,7 @@
 import { ApiService } from './../../../service/api.service';
 import { CartService } from './../../../service/cart.service';
 import { IProduct } from './../../../models/interface.product';
-import { Product } from './../../../models/product';
+import { ProductModel } from '../../../models/product.model';
 import { Component, OnInit } from '@angular/core';
 import { Navigation, Router } from '@angular/router';
 
@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   ) {
     let nav: Navigation | null = this.router.getCurrentNavigation();
     if (nav && nav.extras && nav.extras.state && nav.extras.state['product']) {
-      this.product = nav.extras.state['product'] as Product;
+      this.product = nav.extras.state['product'] as ProductModel;
     }
   }
 

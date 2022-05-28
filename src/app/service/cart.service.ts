@@ -1,3 +1,5 @@
+import { CartItemModel } from './../models/cartItem.model';
+import { ICartItem } from './../models/interface.cartItems';
 import { IProduct } from '../models/interface.product';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -6,39 +8,55 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
-  public cartItemList: Array<IProduct> = [];
-  public productList = new BehaviorSubject<any>([]);
+  public cartItemList: BehaviorSubject<Array<ICartItem>> = new BehaviorSubject<
+    Array<ICartItem>
+  >([]);
+
   public search = new BehaviorSubject<string>('');
 
   constructor() {}
-  getProducts() {
-    return this.productList.asObservable();
+
+  getCartItems() {
+    return this.cartItemList.asObservable();
   }
-  setProduct(product: IProduct) {
-    this.cartItemList.push(product);
-    this.productList.next(product);
-  }
+
   addToCart(product: IProduct) {
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
+    const alreadyExist: ICartItem | undefined = this.cartItemList
+      .getValue()
+      .find((item: ICartItem) => item.productId === product.id);
+    if (alreadyExist) {
+      alreadyExist.quantity = alreadyExist.quantity + 1;
+    } else {
+      const newCartItem = new CartItemModel({
+        price: product.price,
+        description: product.description,
+        title: product.title,
+        quantity: 1,
+        productId: product.id,
+        image: product.image,
+      });
+      this.cartItemList.getValue().push(newCartItem);
+    }
+    this.cartItemList.next(this.cartItemList.getValue());
   }
   getTotalPrice(): number {
     let grandTotal = 0;
-    this.cartItemList.map((a: any) => {
+    this.cartItemList.getValue().map((a: any) => {
       grandTotal += a.total;
     });
     return grandTotal;
   }
   removeCartItem(product: IProduct) {
-    this.cartItemList.map((item: any, index: any) => {
+    this.cartItemList.getValue().map((item: any, index: any) => {
       if (product.id === item.id) {
-        this.cartItemList.splice(index, 1);
+        this.cartItemList.getValue().splice(index, 1);
       }
     });
-    this.productList.next(this.cartItemList);
+    this.cartItemList.next(this.cartItemList.getValue());
   }
+
   removeAll() {
-    this.cartItemList = [];
-    this.productList.next(this.cartItemList);
+    this.cartItemList = new BehaviorSubject<Array<ICartItem>>([]);
+    this.cartItemList.next(this.cartItemList.getValue());
   }
 }

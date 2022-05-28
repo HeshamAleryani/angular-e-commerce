@@ -1,3 +1,4 @@
+import { ICartItem } from './../../models/interface.cartItems';
 import { ApiService } from './../../service/api.service';
 import { IProduct } from './../../models/interface.product';
 import { Component, OnInit } from '@angular/core';
@@ -16,8 +17,11 @@ export class NavbarComponent implements OnInit {
   constructor(private cartService: CartService, private api: ApiService) {}
 
   ngOnInit(): void {
-    this.cartService.getProducts().subscribe((res) => {
-      this.totalItem = res.length;
+    this.cartService.getCartItems().subscribe((res) => {
+      this.totalItem = 0;
+      res.forEach((item: ICartItem) => {
+        this.totalItem = this.totalItem + item.quantity;
+      });
     });
   }
 
