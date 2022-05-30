@@ -1,4 +1,4 @@
-<div class="ui menu">
+<!-- <div class="ui menu">
   <a (click)="filter('')" class="item">
     <button class="ui inverted orange button">
       <span> All</span>
@@ -18,6 +18,45 @@
       <span> Jewelery</span>
     </button>
   </a>
+</div> -->
+<div class="combo">
+  <div>Category:</div>
+  <div class="select" tabindex="1">
+    <input
+      (click)="filter('')"
+      class="selectopt"
+      name="test"
+      type="radio"
+      id="opt1"
+      checked
+    />
+    <label for="opt1" class="option"> All</label>
+    <input
+      (click)="filter('fashion')"
+      class="selectopt"
+      name="test"
+      type="radio"
+      id="opt2"
+    />
+    <label for="opt2" class="option">Fashion</label>
+    <input
+      (click)="filter('electronics')"
+      class="selectopt"
+      name="test"
+      type="radio"
+      id="opt3"
+    />
+    <label for="opt3" class="option">Electronics</label>
+
+    <input
+      (click)="filter('jewelery')"
+      class="selectopt"
+      name="test"
+      type="radio"
+      id="opt5"
+    />
+    <label for="opt5" class="option">Jewelery</label>
+  </div>
 </div>
 
 <div class="container-card">
