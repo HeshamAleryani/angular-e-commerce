@@ -177,3 +177,9 @@ header .menu {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+
+.numbers {
+  margin: 10px;
+  font-weight: bold;
+}

@@ -22,15 +22,17 @@
       <li><a routerLink="blog" href="">Blog</a></li>
       <li>
         <div class="cart-button">
+          <div class="numbers">{{ totalItem }}</div>
+
           <i
             routerLink="cart"
             style="font-size: 20px; color: white"
             class="shopping cart icon"
           ></i>
-          <div class="numbers">{{ totalItem }}</div>
         </div>
       </li>
     </ul>
+
     <div class="menu">
       <label for="chk1">
         <i class="list ul icon"></i>
