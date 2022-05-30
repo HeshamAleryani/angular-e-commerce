@@ -2,13 +2,13 @@ import { IProduct } from '../../models/interface.product';
 import { CartService } from './../../service/cart.service';
 import { ApiService } from './../../service/api.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
+  p: number = 1;
   public filterCategory: any;
   searchKey: string = '';
   public productList!: Array<IProduct>;
