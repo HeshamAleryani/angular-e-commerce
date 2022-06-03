@@ -1,8 +1,5 @@
-.app-container {
-  background: url(https://img.freepik.com/free-vector/1111-shopping-day-sale-banner-template-special-offer-discount-abstract-red-geometric-web-header_72787-855.jpg?w=1800);
-  background-size: cover;
-  height: 50vh;
-  background-position: center;
-  display: block;
-  padding-top: 50vh;
+.app-image-container img {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
 }

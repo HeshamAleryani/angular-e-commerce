@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductComponent } from './components/products/product/product.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NavbarComponent,
     ProductComponent,
     BlogComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

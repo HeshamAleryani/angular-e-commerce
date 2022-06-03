@@ -1,110 +1,96 @@
-<!-- <div class="ui menu">
-  <a (click)="filter('')" class="item">
-    <button class="ui inverted orange button">
-      <span> All</span>
-    </button>
-  </a>
+<div class="products-component-container" *ngIf="!loading">
+  <div class="combo">
+    <div>Category:</div>
+    <div class="select" tabindex="1">
+      <input
+        (click)="filter('')"
+        class="selectopt"
+        name="test"
+        type="radio"
+        id="opt1"
+        checked
+      />
+      <label for="opt1" class="option"> All</label>
+      <input
+        (click)="filter('fashion')"
+        class="selectopt"
+        name="test"
+        type="radio"
+        id="opt2"
+      />
+      <label for="opt2" class="option">Fashion</label>
+      <input
+        (click)="filter('electronics')"
+        class="selectopt"
+        name="test"
+        type="radio"
+        id="opt3"
+      />
+      <label for="opt3" class="option">Electronics</label>
 
-  <a (click)="filter('fashion')" class="item">
-    <button class="ui inverted violet button">
-      <span> Fashion </span>
-    </button> </a
-  ><a (click)="filter('electronics')" class="item">
-    <button class="ui inverted blue button">
-      <span> Electronics</span>
-    </button> </a
-  ><a class="item" (click)="filter('jewelery')">
-    <button class="ui inverted yellow button">
-      <span> Jewelery</span>
-    </button>
-  </a>
-</div> -->
-<div class="combo">
-  <div>Category:</div>
-  <div class="select" tabindex="1">
-    <input
-      (click)="filter('')"
-      class="selectopt"
-      name="test"
-      type="radio"
-      id="opt1"
-      checked
-    />
-    <label for="opt1" class="option"> All</label>
-    <input
-      (click)="filter('fashion')"
-      class="selectopt"
-      name="test"
-      type="radio"
-      id="opt2"
-    />
-    <label for="opt2" class="option">Fashion</label>
-    <input
-      (click)="filter('electronics')"
-      class="selectopt"
-      name="test"
-      type="radio"
-      id="opt3"
-    />
-    <label for="opt3" class="option">Electronics</label>
-
-    <input
-      (click)="filter('jewelery')"
-      class="selectopt"
-      name="test"
-      type="radio"
-      id="opt5"
-    />
-    <label for="opt5" class="option">Jewelery</label>
+      <input
+        (click)="filter('jewelery')"
+        class="selectopt"
+        name="test"
+        type="radio"
+        id="opt5"
+      />
+      <label for="opt5" class="option">Jewelery</label>
+    </div>
   </div>
-</div>
 
-<div class="container-card">
-  <div class="container-body" style="display: flex; flex-wrap: wrap">
-    <ng-container
-      *ngFor="
-        let item of filterCategory
-          | filter: searchKey:'title'
-          | paginate: { itemsPerPage: 5, currentPage: p }
+  <div class="container-card">
+    <div class="container-body" style="display: flex; flex-wrap: wrap">
+      <ng-container
+        *ngFor="
+          let item of filterCategory
+            | filter: searchKey:'title'
+            | paginate: { itemsPerPage: 5, currentPage: p }
+        "
+      >
+        <div class="ui card">
+          <a [routerLink]="item.link" [state]="{ product: item }">
+            <img src="{{ item.image }}" alt="{{ item.title }}" />
+          </a>
+          <h5
+            style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100ch;
+            "
+          >
+            {{ item.title }}
+          </h5>
+          <p
+            style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100ch;
+            "
+          >
+            {{ item.description }}
+          </p>
+          <p><strong>Price:</strong> ${{ item.price }}</p>
+          <button
+            (click)="addToCart(item)"
+            class="ui inverted green button"
+            style="border-radius: 5rem"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </ng-container>
+    </div>
+    <pagination-controls
+      style="
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
       "
-    >
-      <div class="ui card">
-        <a [routerLink]="item.link" [state]="{ product: item }">
-          <img src="{{ item.image }}" alt="{{ item.title }}" />
-        </a>
-        <h5
-          style="
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100ch;
-          "
-        >
-          {{ item.title }}
-        </h5>
-        <p
-          style="
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100ch;
-          "
-        >
-          {{ item.description }}
-        </p>
-        <p><strong>Price:</strong> ${{ item.price }}</p>
-        <button
-          (click)="addToCart(item)"
-          class="ui inverted green button"
-          style="border-radius: 5rem"
-        >
-          Add to Cart
-        </button>
-      </div>
-    </ng-container>
+      (pageChange)="p = $event"
+    ></pagination-controls>
   </div>
-  <pagination-controls
-    style="margin: 10px; padding: 10px"
-    (pageChange)="p = $event"
-  ></pagination-controls>
 </div>

@@ -179,7 +179,40 @@ header .menu {
 }
 
 
-.numbers {
-  margin: 10px;
-  font-weight: bold;
+
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+
+}
+
+
+#cartCount {
+  font-size: 12px;
+  background: #ff0000;
+  color: #fff;
+  background-color: #c67605;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  top: -17px;
+  right: 0;
+  height: 17px;
+  width: 17px;
+}
+
+.cart-button {
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-button i {
+  font-size: 24px;
+  color: white;
 }

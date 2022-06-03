@@ -12,9 +12,11 @@ export class ProductsComponent implements OnInit {
   public filterCategory: any;
   searchKey: string = '';
   public productList!: Array<IProduct>;
+  loading: boolean = false;
   constructor(private api: ApiService, private cartService: CartService) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.api.getProduct().subscribe((res: Array<IProduct>) => {
       this.productList = res;
       this.filterCategory = res;
@@ -27,6 +29,7 @@ export class ProductsComponent implements OnInit {
         }
       });
       console.log(this.productList);
+      this.loading = false;
     });
     this.cartService.search.subscribe((val: any) => {
       this.searchKey = val;
