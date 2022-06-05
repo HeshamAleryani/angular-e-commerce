@@ -1,6 +1,6 @@
+import { ICartItem } from './../../models/interface.cartItems';
 import { CartService } from './../../service/cart.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -24,5 +24,11 @@ export class CartComponent implements OnInit {
   }
   empyCart() {
     this.cartService.removeAll();
+  }
+  addQuantity(item: ICartItem) {
+    this.cartService.addToCart(item);
+  }
+  subQuntity(item: ICartItem) {
+    this.cartService.subToCart(item);
   }
 }

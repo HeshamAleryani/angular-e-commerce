@@ -29,6 +29,7 @@ export class CartService {
     } else {
       const newCartItem = new CartItemModel({
         price: product.price,
+        id: product.id,
         description: product.description,
         title: product.title,
         quantity: 1,
@@ -44,7 +45,7 @@ export class CartService {
     this.cartItemList.getValue().map((a: any) => {
       grandTotal += a.total;
     });
-    return grandTotal;
+    return Math.round(grandTotal);
   }
   removeCartItem(product: IProduct) {
     this.cartItemList.getValue().map((item: any, index: any) => {
@@ -57,6 +58,15 @@ export class CartService {
 
   removeAll() {
     this.cartItemList = new BehaviorSubject<Array<ICartItem>>([]);
+    this.cartItemList.next(this.cartItemList.getValue());
+  }
+  subToCart(product: IProduct) {
+    const alreadyExist: ICartItem | undefined = this.cartItemList
+      .getValue()
+      .find((item: ICartItem) => item.productId === product.id);
+    if (alreadyExist && alreadyExist.quantity >= 2) {
+      alreadyExist.quantity = alreadyExist.quantity - 1;
+    }
     this.cartItemList.next(this.cartItemList.getValue());
   }
 }

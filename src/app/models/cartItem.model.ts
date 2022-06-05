@@ -1,5 +1,6 @@
 import { ICartItem } from './interface.cartItems';
 export class CartItemModel implements ICartItem {
+  id?: number;
   productId?: number;
   title?: string;
   description?: string;
@@ -14,6 +15,7 @@ export class CartItemModel implements ICartItem {
     this.price = payload.price;
     this.quantity = payload.quantity;
     this.image = payload.image;
+    this.id = payload.id;
   }
 
   get total() {
