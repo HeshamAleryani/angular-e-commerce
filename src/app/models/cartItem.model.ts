@@ -19,6 +19,6 @@ export class CartItemModel implements ICartItem {
   }
 
   get total() {
-    return this.quantity * this.price;
+    return Math.round(this.quantity * this.price);
   }
 }

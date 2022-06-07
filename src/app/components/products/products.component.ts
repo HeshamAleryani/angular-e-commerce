@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
   p: number = 1;
   public filterCategory: any;
+  public filterPrice: any;
   searchKey: string = '';
   public productList!: Array<IProduct>;
   loading: boolean = false;
@@ -28,7 +29,6 @@ export class ProductsComponent implements OnInit {
           a.category = 'fashion';
         }
       });
-      console.log(this.productList);
       this.loading = false;
     });
     this.cartService.search.subscribe((val: any) => {
@@ -44,5 +44,13 @@ export class ProductsComponent implements OnInit {
         return a;
       }
     });
+  }
+  filterProductPrice(price: number) {
+    this.filterPrice = this.productList.filter((item: any) => {
+      if (item.price == price || price == null) {
+        return item;
+      }
+    });
+    console.log(this.filterProductPrice(556));
   }
 }
