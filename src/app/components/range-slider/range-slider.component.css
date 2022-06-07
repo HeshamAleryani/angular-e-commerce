@@ -1,0 +1,16 @@
+.range-slider-container {}
+
+.range-slider-container .group {
+  padding: 0 0 0 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+::ng-deep .range-slider .ngx-slider .ngx-slider-pointer {
+  background: rgb(246 166 35) !important;
+}
+
+::ng-deep .range-slider .ngx-slider .ngx-slider-selection {
+  background: rgb(246 166 35) !important;
+}

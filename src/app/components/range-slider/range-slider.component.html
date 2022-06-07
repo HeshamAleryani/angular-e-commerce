@@ -1,0 +1,20 @@
+<div class="range-slider-container">
+  <div class="group">
+    <label>From</label>
+    <input type="number" [(ngModel)]="minValue" />
+  </div>
+
+  <div class="group">
+    <label>To</label>
+    <input type="number" [(ngModel)]="maxValue" />
+  </div>
+
+  <div class="range-slider">
+    <ngx-slider
+      [(value)]="minValue"
+      [(highValue)]="maxValue"
+      [options]="options"
+      (valueChange)="_onChange()"
+    ></ngx-slider>
+  </div>
+</div>

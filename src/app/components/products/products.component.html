@@ -1,51 +1,36 @@
 <div class="products-component-container" *ngIf="!loading">
-  <div class="combo">
-    <div>Category:</div>
-    <div class="select" tabindex="1">
-      <input
-        (click)="filter('')"
-        class="selectopt"
-        name="test"
-        type="radio"
-        id="opt1"
-        checked
-      />
-      <label for="opt1" class="option"> All</label>
-      <input
-        (click)="filter('fashion')"
-        class="selectopt"
-        name="test"
-        type="radio"
-        id="opt2"
-      />
-      <label for="opt2" class="option">Fashion</label>
-      <input
-        (click)="filter('electronics')"
-        class="selectopt"
-        name="test"
-        type="radio"
-        id="opt3"
-      />
-      <label for="opt3" class="option">Electronics</label>
+  <div class="sidebar">
+    <div class="section">
+      <div class="header">
+        <h3>Categories</h3>
+      </div>
+      <div class="body">
+        <ul>
+          <li (click)="filterCategory('')">All</li>
+          <li (click)="filterCategory('fashion')">Fashion</li>
+          <li (click)="filterCategory('electronics')">Electronics</li>
+          <li (click)="filterCategory('jewelery')">Jewelery</li>
+        </ul>
+      </div>
+    </div>
 
-      <input
-        (click)="filter('jewelery')"
-        class="selectopt"
-        name="test"
-        type="radio"
-        id="opt5"
-      />
-      <label for="opt5" class="option">Jewelery</label>
+    <div class="section">
+      <div class="header">
+        <h3>Price</h3>
+      </div>
+      <div class="body">
+        <app-range-slider (onChange)="filterPrice($event)"></app-range-slider>
+      </div>
     </div>
   </div>
 
-  <div class="container-card">
-    <div class="container-body" style="display: flex; flex-wrap: wrap">
+  <div class="content container-card">
+    <div class="container-body">
       <ng-container
         *ngFor="
-          let item of filterCategory
+          let item of filteredProducts
             | filter: searchKey:'title'
-            | paginate: { itemsPerPage: 5, currentPage: p }
+            | paginate: { itemsPerPage: 8, currentPage: p }
         "
       >
         <div class="ui card">
@@ -75,7 +60,7 @@
           <p><strong>Price:</strong> ${{ item.price }}</p>
           <button
             (click)="addToCart(item)"
-            class="ui inverted green button"
+            class="ui inverted yellow button"
             style="border-radius: 5rem"
           >
             Add to Cart

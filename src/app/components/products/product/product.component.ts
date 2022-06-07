@@ -27,7 +27,7 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.api.getProduct().subscribe((res: Array<IProduct>) => {
+    this.api.getProduct().subscribe((res: any) => {
       this.productList = res;
     });
     this.cartService.search.subscribe((val: any) => {

@@ -1,3 +1,4 @@
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +14,7 @@ import { ProductComponent } from './components/products/product/product.componen
 import { BlogComponent } from './components/blog/blog.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FooterComponent } from './components/footer/footer.component';
+import { RangeSliderComponent } from './components/range-slider/range-slider.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ProductComponent,
     BlogComponent,
     FooterComponent,
+    RangeSliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    NgxSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
