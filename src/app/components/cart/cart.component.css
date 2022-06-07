@@ -304,7 +304,8 @@ a:hover {
 
 .qt-plus:hover,
 .qt-minus:hover {
-  background: #53b5aa;
+  background: #f6a623;
+  ;
   color: #fff;
   cursor: pointer;
 }
