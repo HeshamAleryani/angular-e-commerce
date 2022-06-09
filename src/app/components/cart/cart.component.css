@@ -29,7 +29,8 @@
 
 .fluid.ui.button {
   font-size: large;
-  background-color: #f59b25;
+  background-color: #31cfce;
+  ;
 }
 
 h4 {
@@ -92,7 +93,7 @@ a {
 }
 
 a:hover {
-  color: #53b5aa;
+  color: #31cfce;
 }
 
 
@@ -201,7 +202,8 @@ a:hover {
 }
 
 .product header h3 {
-  background: #f6a623;
+  background: #186767;
+  ;
   color: #fff;
   font-size: 22px;
   font-weight: 300;
@@ -233,7 +235,8 @@ a:hover {
 }
 
 .product h1 {
-  color: #f6a623;
+  color: #92e6e5;
+  ;
   font-size: 25px;
   font-weight: 300;
   margin: 17px 0 20px 0;
@@ -257,7 +260,8 @@ a:hover {
 }
 
 .product footer .full-price {
-  background: #f6a623;
+  background: #92e6e5;
+  ;
   color: #fff;
   float: right;
   font-size: 22px;
@@ -304,7 +308,8 @@ a:hover {
 
 .qt-plus:hover,
 .qt-minus:hover {
-  background: #f6a623;
+  background: #92e6e5;
+  ;
   ;
   color: #fff;
   cursor: pointer;
@@ -358,7 +363,8 @@ a:hover {
 }
 
 .btn {
-  background: #f6a623;
+  background: #186767;
+  ;
   border: 1px solid #999;
   border-style: none none solid none;
   cursor: pointer;
@@ -379,5 +385,6 @@ a:hover {
 
 .btn:hover {
   color: #fff;
-  background: #ba7a11;
+  background: #92e6e5;
+  ;
 }

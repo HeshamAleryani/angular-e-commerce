@@ -8,9 +8,10 @@
 }
 
 ::ng-deep .range-slider .ngx-slider .ngx-slider-pointer {
-  background: rgb(246 166 35) !important;
+  background: #31cfce !important;
 }
 
 ::ng-deep .range-slider .ngx-slider .ngx-slider-selection {
-  background: rgb(246 166 35) !important;
+  background: #0db9f0 !important;
+
 }

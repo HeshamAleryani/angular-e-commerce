@@ -25,57 +25,65 @@
   </div>
 
   <div class="content container-card">
-    <div class="container-body">
-      <ng-container
-        *ngFor="
-          let item of filteredProducts
-            | filter: searchKey:'title'
-            | paginate: { itemsPerPage: 8, currentPage: p }
+    <div *ngIf="filteredProducts.length > 0">
+      <div class="container-body">
+        <ng-container
+          *ngFor="
+            let item of filteredProducts
+              | filter: searchKey:'title'
+              | paginate: { itemsPerPage: 8, currentPage: p }
+          "
+        >
+          <div class="ui card">
+            <a [routerLink]="item.link" [state]="{ product: item }">
+              <img src="{{ item.image }}" alt="{{ item.title }}" />
+            </a>
+            <h5
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100ch;
+              "
+            >
+              {{ item.title }}
+            </h5>
+            <p
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100ch;
+              "
+            >
+              {{ item.description }}
+            </p>
+            <p><strong>Price:</strong> ${{ item.price }}</p>
+            <button
+              (click)="addToCart(item)"
+              class="ui inverted green button"
+              style="border-radius: 5rem"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </ng-container>
+      </div>
+      <pagination-controls
+        style="
+          margin: 10px;
+          padding: 10px;
+          display: flex;
+          justify-content: center;
         "
-      >
-        <div class="ui card">
-          <a [routerLink]="item.link" [state]="{ product: item }">
-            <img src="{{ item.image }}" alt="{{ item.title }}" />
-          </a>
-          <h5
-            style="
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              max-width: 100ch;
-            "
-          >
-            {{ item.title }}
-          </h5>
-          <p
-            style="
-              white-space: nowrap;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              max-width: 100ch;
-            "
-          >
-            {{ item.description }}
-          </p>
-          <p><strong>Price:</strong> ${{ item.price }}</p>
-          <button
-            (click)="addToCart(item)"
-            class="ui inverted yellow button"
-            style="border-radius: 5rem"
-          >
-            Add to Cart
-          </button>
-        </div>
-      </ng-container>
+        (pageChange)="p = $event"
+      ></pagination-controls>
     </div>
-    <pagination-controls
-      style="
-        margin: 10px;
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-      "
-      (pageChange)="p = $event"
-    ></pagination-controls>
+
+    <div class="no-product-container" *ngIf="filteredProducts.length === 0">
+      <h1>Sorry<span class="gold">!</span></h1>
+      <h4 class="gold">No Products <span class="black">found</span></h4>
+      <img src="../../../assets/Capture.PNG" />
+    </div>
   </div>
 </div>

@@ -7,8 +7,8 @@ import { Options } from '@angular-slider/ngx-slider';
   styleUrls: ['./range-slider.component.css'],
 })
 export class RangeSliderComponent {
-  minValue: number = 50;
-  maxValue: number = 200;
+  minValue: number = 0;
+  maxValue: number = 1000;
   options: Options = {
     floor: 0,
     ceil: 1000,

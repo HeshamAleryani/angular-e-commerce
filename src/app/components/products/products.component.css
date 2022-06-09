@@ -4,14 +4,16 @@
 }
 
 .sidebar {
-  width: 20%;
+  width: 15%;
+
+
 }
 
 .sidebar .section {}
 
 .sidebar .section .header {
   padding: 5px;
-  background-color: #f6a623;
+  background-color: #31cfce;
   color: white;
 }
 
@@ -36,11 +38,11 @@
 }
 
 .content {
-  width: 80%;
+  width: 85%;
 }
 
 .container-body {
-  margin-top: 100px;
+  margin-top: 200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -66,4 +68,28 @@
 .ui.card:hover {
   transition: 0.3s ease-in-out;
   transform: scale(1.1);
+}
+
+.no-product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.no-product-container h1 {
+  font-size: 3em;
+}
+
+.no-product-container h4 {
+  font-size: 3em;
+}
+
+.gold {
+  color: #31cfce;
+}
+
+.black {
+  color: black;
 }
