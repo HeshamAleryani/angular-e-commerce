@@ -1,28 +1,58 @@
-<div class="products-component-container" *ngIf="!loading">
-  <div class="sidebar">
-    <div class="section">
-      <div class="header">
-        <h3>Categories</h3>
-      </div>
-      <div class="body">
-        <ul>
-          <li (click)="filterCategory('')">All</li>
-          <li (click)="filterCategory('fashion')">Fashion</li>
-          <li (click)="filterCategory('electronics')">Electronics</li>
-          <li (click)="filterCategory('jewelery')">Jewelery</li>
+<div class="wrapper">
+  <nav id="sidebar">
+    <ul class="list-unstyled components">
+      <p>Filter</p>
+      <li class="active">
+        <a
+          href="#homeSubmenu"
+          data-toggle="collapse"
+          aria-expanded="false"
+          class="dropdown-toggle"
+          >Categories</a
+        >
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li>
+            <a href="#"><li (click)="filterCategory('')">All</li></a>
+          </li>
+          <li>
+            <a href="#">
+              <li (click)="filterCategory('fashion')">Fashion</li>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <li (click)="filterCategory('electronics')">Electronics</li>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <li (click)="filterCategory('jewelery')">Jewelery</li>
+            </a>
+          </li>
         </ul>
-      </div>
-    </div>
+      </li>
 
-    <div class="section">
-      <div class="header">
-        <h3>Price</h3>
-      </div>
-      <div class="body">
-        <app-range-slider (onChange)="filterPrice($event)"></app-range-slider>
-      </div>
-    </div>
-  </div>
+      <li>
+        <a
+          href="#pageSubmenu"
+          data-toggle="collapse"
+          aria-expanded="false"
+          class="dropdown-toggle"
+          >Price</a
+        >
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a href="#"
+              ><div class="body">
+                <app-range-slider
+                  (onChange)="filterPrice($event)"
+                ></app-range-slider></div
+            ></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
   <div class="content container-card">
     <div *ngIf="filteredProducts.length > 0">
@@ -36,7 +66,11 @@
         >
           <div class="ui card">
             <a [routerLink]="item.link" [state]="{ product: item }">
-              <img src="{{ item.image }}" alt="{{ item.title }}" />
+              <img
+                (click)="showToatr()"
+                src="{{ item.image }}"
+                alt="{{ item.title }}"
+              />
             </a>
             <h5
               style="
@@ -60,6 +94,7 @@
             </p>
             <p><strong>Price:</strong> ${{ item.price }}</p>
             <button
+              (click)="showToatr()"
               (click)="addToCart(item)"
               class="ui inverted green button"
               style="border-radius: 5rem"

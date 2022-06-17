@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { IFilters } from './../../models/interface.filters';
 import { IProduct } from '../../models/interface.product';
 import { CartService } from './../../service/cart.service';
@@ -19,7 +20,11 @@ export class ProductsComponent implements OnInit {
   public productList!: Array<IProduct>;
   public filteredProducts!: Array<IProduct>;
   loading: boolean = false;
-  constructor(private api: ApiService, private cartService: CartService) {}
+  constructor(
+    private api: ApiService,
+    private cartService: CartService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -83,5 +88,8 @@ export class ProductsComponent implements OnInit {
         }
         return true;
       });
+  }
+  showToatr() {
+    this.toastr.success('Product been added', 'title');
   }
 }

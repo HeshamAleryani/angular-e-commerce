@@ -10,6 +10,7 @@ import { CartService } from './../../service/cart.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  homeSlider = { item: 1, dots: true, nav: true };
   public filterCategory: any;
   public productList!: Array<IProduct>;
   public totalItem: number = 0;

@@ -15,7 +15,8 @@ import { BlogComponent } from './components/blog/blog.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FooterComponent } from './components/footer/footer.component';
 import { RangeSliderComponent } from './components/range-slider/range-slider.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,8 @@ import { RangeSliderComponent } from './components/range-slider/range-slider.com
     ReactiveFormsModule,
     NgxPaginationModule,
     NgxSliderModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({ timeOut: 1000 }),
   ],
   providers: [],
   bootstrap: [AppComponent],

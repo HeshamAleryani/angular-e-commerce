@@ -4,7 +4,10 @@
   padding: 0 0 0 5px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+}
+
+.range-slider-container .group input {
+  max-width: 50%;
 }
 
 ::ng-deep .range-slider .ngx-slider .ngx-slider-pointer {
