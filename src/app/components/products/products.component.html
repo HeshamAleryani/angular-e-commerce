@@ -66,11 +66,7 @@
         >
           <div class="ui card">
             <a [routerLink]="item.link" [state]="{ product: item }">
-              <img
-                (click)="showToatr()"
-                src="{{ item.image }}"
-                alt="{{ item.title }}"
-              />
+              <img src="{{ item.image }}" alt="{{ item.title }}" />
             </a>
             <h5
               style="
@@ -96,10 +92,10 @@
             <button
               (click)="showToatr()"
               (click)="addToCart(item)"
-              class="ui inverted green button"
-              style="border-radius: 5rem"
+              class="ui inverted grey button"
+              style="color: black"
             >
-              Add to Cart
+              Add to cart
             </button>
           </div>
         </ng-container>

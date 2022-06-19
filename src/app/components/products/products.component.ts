@@ -90,6 +90,6 @@ export class ProductsComponent implements OnInit {
       });
   }
   showToatr() {
-    this.toastr.success('Product been added', 'title');
+    this.toastr.success('added', 'Product been added');
   }
 }

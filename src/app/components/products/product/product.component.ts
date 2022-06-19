@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from './../../../service/api.service';
 import { CartService } from './../../../service/cart.service';
 import { IProduct } from './../../../models/interface.product';
@@ -16,6 +17,8 @@ export class ProductComponent implements OnInit {
   public productList!: Array<IProduct>;
 
   constructor(
+    private toastr: ToastrService,
+
     private router: Router,
     private api: ApiService,
     private cartService: CartService
@@ -36,5 +39,8 @@ export class ProductComponent implements OnInit {
   }
   addToCart(item: IProduct) {
     this.cartService.addToCart(item);
+  }
+  showToatr() {
+    this.toastr.success(this.product.title, 'Product added');
   }
 }

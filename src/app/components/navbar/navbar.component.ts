@@ -3,7 +3,8 @@ import { ApiService } from './../../service/api.service';
 import { IProduct } from './../../models/interface.product';
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './../../service/cart.service';
-
+import * as $ from 'jquery';
+import 'bootstrap';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -23,6 +24,14 @@ export class NavbarComponent implements OnInit {
       res.forEach((item: ICartItem) => {
         this.totalItem = this.totalItem + item.quantity;
       });
+    });
+
+    const carousel = $('#carouselExampleIndicators');
+    carousel.on('slid.bs.carousel', () => {
+      const sidebar = $('#sidebar');
+      const currentSlide = $('.carousel-item.active');
+      const colored = currentSlide.find('.colored');
+      sidebar.css('background', colored.css('background-color'));
     });
   }
 

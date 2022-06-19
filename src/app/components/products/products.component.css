@@ -121,15 +121,11 @@ a:focus {
 
 #sidebar ul li a:hover {
   color: #7386D5;
-  background: #fff;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
   color: #fff;
-  background: linear-gradient(90deg,
-      rgba(63, 63, 69, 1) 21%,
-      rgba(2, 0, 36, 1) 100%);
 }
 
 a[data-toggle="collapse"] {
@@ -147,9 +143,6 @@ a[data-toggle="collapse"] {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: linear-gradient(90deg,
-      rgba(63, 63, 69, 1) 21%,
-      rgba(2, 0, 36, 1) 100%);
 }
 
 #content {
