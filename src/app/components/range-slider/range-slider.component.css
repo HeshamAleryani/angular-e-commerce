@@ -10,11 +10,15 @@
   max-width: 50%;
 }
 
+::ng-deep .ngx-slider {
+  z-index: 0;
+}
+
 ::ng-deep .range-slider .ngx-slider .ngx-slider-pointer {
-  background: #31cfce !important;
+  background: #0f1010 !important;
 }
 
 ::ng-deep .range-slider .ngx-slider .ngx-slider-selection {
-  background: #0db9f0 !important;
+  background: #070707 !important;
 
 }

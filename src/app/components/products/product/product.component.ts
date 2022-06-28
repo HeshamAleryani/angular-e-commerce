@@ -3,7 +3,7 @@ import { ApiService } from './../../../service/api.service';
 import { CartService } from './../../../service/cart.service';
 import { IProduct } from './../../../models/interface.product';
 import { ProductModel } from '../../../models/product.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Navigation, Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,9 @@ import { Navigation, Router } from '@angular/router';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, OnDestroy {
+  apiUnsubscribe: any;
+
   product!: IProduct;
   searchKey: string = '';
   public productList!: Array<IProduct>;
@@ -30,7 +32,7 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.api.getProduct().subscribe((res: any) => {
+    this.apiUnsubscribe = this.api.getProduct().subscribe((res: any) => {
       this.productList = res;
     });
     this.cartService.search.subscribe((val: any) => {
@@ -42,5 +44,8 @@ export class ProductComponent implements OnInit {
   }
   showToatr() {
     this.toastr.success(this.product.title, 'Product added');
+  }
+  ngOnDestroy(): void {
+    this.apiUnsubscribe.unsubscribe();
   }
 }

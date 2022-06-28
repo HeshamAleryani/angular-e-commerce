@@ -1,4 +1,3 @@
-import { IProduct } from './../models/interface.product';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

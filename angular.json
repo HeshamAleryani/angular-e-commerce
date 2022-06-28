@@ -27,15 +27,13 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/semantic-ui-css/semantic.min.css",
               "src/styles.css",
               "node_modules/ngx-toastr/toastr.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/fomantic-ui-css/semantic.min.css"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/popper.js/dist/popper.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/fomantic-ui-css/semantic.min.js"
             ]
           },
           "configurations": {
@@ -43,7 +41,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "4mb",
+                  "maximumWarning": "15mb",
                   "maximumError": "5mb"
                 },
                 {
@@ -103,6 +101,7 @@
             "styles": [
               "src/styles.css",
               "node_modules/ngx-toastr"
+
             ],
             "scripts": [
             ]

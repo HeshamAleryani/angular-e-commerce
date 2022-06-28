@@ -17,6 +17,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RangeSliderComponent } from './components/range-slider/range-slider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { SwiperModule } from 'swiper/angular';
+import { NgxHideOnScrollModule } from 'ngx-hide-on-scroll';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +32,7 @@ import { ToastrModule } from 'ngx-toastr';
     BlogComponent,
     FooterComponent,
     RangeSliderComponent,
+    ImageSliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,9 @@ import { ToastrModule } from 'ngx-toastr';
     NgxPaginationModule,
     NgxSliderModule,
     BrowserAnimationsModule,
+    SwiperModule,
     ToastrModule.forRoot({ timeOut: 1000 }),
+    NgxHideOnScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,115 +1,108 @@
 <div class="wrapper">
-  <nav id="sidebar">
-    <ul class="list-unstyled components">
-      <p>Filter</p>
-      <li class="active">
-        <a
-          href="#homeSubmenu"
-          data-toggle="collapse"
-          aria-expanded="false"
-          class="dropdown-toggle"
-          >Categories</a
-        >
-        <ul class="collapse list-unstyled" id="homeSubmenu">
-          <li>
-            <a href="#"><li (click)="filterCategory('')">All</li></a>
-          </li>
-          <li>
-            <a href="#">
-              <li (click)="filterCategory('fashion')">Fashion</li>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <li (click)="filterCategory('electronics')">Electronics</li>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <li (click)="filterCategory('jewelery')">Jewelery</li>
-            </a>
-          </li>
-        </ul>
-      </li>
+  <div class="sidebar">
+    <div class="ui vertical accordion menu">
+      <div class="item">
+        <a class="title">
+          <i class="dropdown icon"></i>
+          Category
+        </a>
+        <div class="content">
+          <div class="ui form">
+            <div class="grouped fields">
+              <div class="field">
+                <div class="ui checkbox">
+                  <input (click)="filterCategory('')" type="checkbox" name="small">
+                  <label>All</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input (click)="filterCategory('fashion')" type="checkbox" name="medium">
+                  <label>Fashion</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input (click)="filterCategory('electronics')" type="checkbox" name="large">
+                  <label>Electronics</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input (click)="filterCategory('jewelery')" type="checkbox" name="x-large">
+                  <label>Jewelery</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <li>
-        <a
-          href="#pageSubmenu"
-          data-toggle="collapse"
-          aria-expanded="false"
-          class="dropdown-toggle"
-          >Price</a
-        >
-        <ul class="collapse list-unstyled" id="pageSubmenu">
-          <li>
-            <a href="#"
-              ><div class="body">
-                <app-range-slider
-                  (onChange)="filterPrice($event)"
-                ></app-range-slider></div
-            ></a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+
+
+    </div>
+    <div class="ui vertical accordion menu">
+      <div class="item">
+        <a class="active title">
+          <i class="dropdown icon"></i>
+          Price
+        </a>
+        <div class="active content">
+          <div class="ui form">
+            <div class="grouped fields">
+              <div class="price-container">
+                <div class="body">
+                  <app-range-slider (onChange)="filterPrice($event)"></app-range-slider>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="content container-card">
-    <div *ngIf="filteredProducts.length > 0">
-      <div class="container-body">
-        <ng-container
-          *ngFor="
-            let item of filteredProducts
-              | filter: searchKey:'title'
-              | paginate: { itemsPerPage: 8, currentPage: p }
-          "
-        >
-          <div class="ui card">
-            <a [routerLink]="item.link" [state]="{ product: item }">
-              <img src="{{ item.image }}" alt="{{ item.title }}" />
-            </a>
-            <h5
-              style="
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 100ch;
-              "
-            >
-              {{ item.title }}
-            </h5>
-            <p
-              style="
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 100ch;
-              "
-            >
-              {{ item.description }}
-            </p>
-            <p><strong>Price:</strong> ${{ item.price }}</p>
-            <button
-              (click)="showToatr()"
-              (click)="addToCart(item)"
-              class="ui inverted grey button"
-              style="color: black"
-            >
-              Add to cart
-            </button>
-          </div>
-        </ng-container>
-      </div>
-      <pagination-controls
-        style="
-          margin: 10px;
-          padding: 10px;
-          display: flex;
-          justify-content: center;
-        "
-        (pageChange)="p = $event"
-      ></pagination-controls>
+    <div class="container-body" *ngIf="filteredProducts.length > 0">
+      <ng-container *ngFor="
+          let item of filteredProducts
+            | filter: searchKey:'title'
+            | paginate: { itemsPerPage: 8, currentPage: p }
+        ">
+        <div class="ui card">
+          <a [routerLink]="item.link" [state]="{ product: item }">
+            <img src="{{ item.image }}" alt="{{ item.title }}" />
+          </a>
+          <h5 style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100ch;
+            ">
+            {{ item.title }}
+          </h5>
+          <p style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100ch;
+            ">
+            {{ item.description }}
+          </p>
+          <p><strong>Price:</strong> ${{ item.price }}</p>
+          <button (click)="showToatr()" (click)="addToCart(item)" class="ui inverted grey button" style="color: black">
+            Add to cart
+          </button>
+        </div>
+      </ng-container>
     </div>
+    <pagination-controls style="
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+      " (pageChange)="p = $event"></pagination-controls>
 
     <div class="no-product-container" *ngIf="filteredProducts.length === 0">
       <h1>Sorry<span class="gold">!</span></h1>

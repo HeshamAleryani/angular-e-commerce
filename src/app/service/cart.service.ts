@@ -16,7 +16,6 @@ export class CartService {
 
   constructor() {
     const cartItemsJson = JSON.parse(localStorage.getItem('cart')!);
-    console.log(cartItemsJson);
     if (cartItemsJson && Array.isArray(cartItemsJson)) {
       const cartItems: Array<ICartItem> = cartItemsJson.map(
         (item: ICartItem) => {

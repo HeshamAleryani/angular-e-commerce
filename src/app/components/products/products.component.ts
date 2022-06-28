@@ -3,13 +3,16 @@ import { IFilters } from './../../models/interface.filters';
 import { IProduct } from '../../models/interface.product';
 import { CartService } from './../../service/cart.service';
 import { ApiService } from './../../service/api.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+declare var $: any;
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css'],
+  styleUrls: ['./products.component.scss'],
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnDestroy {
+  apiUnsubscribe: any;
   filters: IFilters = {
     priceMax: 0,
     priceMin: 0,
@@ -27,8 +30,9 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    $('.ui.accordion').accordion();
     this.loading = true;
-    this.api.getProduct().subscribe((res: any) => {
+    this.apiUnsubscribe = this.api.getProduct().subscribe((res: any) => {
       this.productList = res;
       this.productList.forEach((a: any) => {
         if (
@@ -91,5 +95,14 @@ export class ProductsComponent implements OnInit {
   }
   showToatr() {
     this.toastr.success('added', 'Product been added');
+  }
+
+  ngOnDestroy(): void {
+    this.apiUnsubscribe.unsubscribe();
+    $('#diacriticsexample').dropdown({
+      ignoreDiacritics: true,
+      sortSelect: true,
+      fullTextSearch: 'exact',
+    });
   }
 }

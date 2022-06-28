@@ -1,6 +1,6 @@
 .products-component-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .content {
@@ -52,7 +52,7 @@
 }
 
 .gold {
-  color: #31cfce;
+  color: #deebeb;
 }
 
 .black {
@@ -66,7 +66,6 @@ a:focus {
   text-decoration: none;
   transition: all 0.3s;
 }
-
 
 .navbar-btn {
   box-shadow: none;
@@ -85,64 +84,9 @@ a:focus {
   width: 100%;
   align-items: stretch;
   margin-top: 50px;
-
-
 }
 
-#sidebar {
-  width: 15%;
-  background: linear-gradient(90deg,
-      rgba(63, 63, 69, 1) 21%,
-      rgba(2, 0, 36, 1) 100%);
-  color: #fff;
-  transition: all 0.3s;
-  height: 25%;
-}
-
-#sidebar.active {
-  margin-left: -15%;
-}
-
-#sidebar ul.components {
-  padding: 20px 0px;
-}
-
-#sidebar ul p {
-  padding: 10px;
-  font-size: 1.1em;
-  display: block;
-}
-
-#sidebar ul li a {
-  padding: 10px;
-  font-size: 1.1em;
-  display: block;
-}
-
-#sidebar ul li a:hover {
-  color: #7386D5;
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-  color: #fff;
-}
-
-a[data-toggle="collapse"] {
-  position: relative;
-}
-
-.dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-}
-
-ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
+.sidebar {
 }
 
 #content {
@@ -152,16 +96,60 @@ ul ul a {
   transition: all 0.3s;
 }
 
-@media(maz-width:768px) {
-  #sidebar {
-    margin-left: -250px;
+.price-container {
+  border-style: outset;
+}
+
+.category-container {
+  border-style: outset;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .ui.vertical.accordion.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
   }
 
-  #sidebar.active {
-    margin-left: 0px;
+  .collapse.list-unstyled {
+    display: flex;
+    justify-content: center;
   }
 
-  #sidebarCollapse span {
-    display: none;
+  .sidebar {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
   }
+
+  .ui.card {
+    display: flex;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
+
+.ui.fitted.checkbox {
+  font-size: 5px;
+}
+.category-container.active {
+  border-style: none;
+}
+.category-container {
+  border-style: none;
+}
+.price-container {
+  border-style: none;
+}
+.ui.menu {
+  margin: 20px;
+  width: 276px;
 }
