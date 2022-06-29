@@ -91,6 +91,9 @@ a:focus {
 }
 
 .sidebar {
+  .ui.accordion.menu .item .title > .dropdown.icon {
+    transform: rotate(0deg);
+  }
 }
 
 #content {
@@ -114,11 +117,17 @@ a:focus {
     display: flex;
     flex-direction: column;
   }
-  .ui.vertical.accordion.menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
+  #veticalmenu2 {
+    position: absolute;
+    z-index: 9999;
+    width: 40%;
+    left: 0;
+  }
+  #veticalmenu1 {
+    position: absolute;
+    z-index: 9999;
+    width: 40%;
+    right: 0;
   }
 
   .collapse.list-unstyled {
@@ -127,9 +136,18 @@ a:focus {
   }
 
   .sidebar {
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
+    height: 100px;
+    position: relative;
+
+    .ui.vertical.accordion.menu {
+      position: absolute;
+      z-index: 9999;
+      width: 40%;
+      right: 0;
+    }
+    .ui.vertical.accordion.menu:nth-child(2) {
+      left: 0;
+    }
   }
 
   .ui.card {

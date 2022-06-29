@@ -2,9 +2,9 @@ import { ToastrService } from 'ngx-toastr';
 import { ApiService } from './../../../service/api.service';
 import { CartService } from './../../../service/cart.service';
 import { IProduct } from './../../../models/interface.product';
-import { ProductModel } from '../../../models/product.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Navigation, Router } from '@angular/router';
+import { Navigation, NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -18,22 +18,25 @@ export class ProductComponent implements OnInit, OnDestroy {
   searchKey: string = '';
   public productList!: Array<IProduct>;
 
+  onRouteChange!: Subscription;
+
   constructor(
     private toastr: ToastrService,
 
     private router: Router,
     private api: ApiService,
     private cartService: CartService
-  ) {
-    let nav: Navigation | null = this.router.getCurrentNavigation();
-    if (nav && nav.extras && nav.extras.state && nav.extras.state['product']) {
-      this.product = nav.extras.state['product'] as ProductModel;
-    }
-  }
+  ) {}
 
   ngOnInit(): void {
     this.apiUnsubscribe = this.api.getProduct().subscribe((res: any) => {
       this.productList = res;
+      this.setCurrentProduct();
+    });
+    this.onRouteChange = this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.setCurrentProduct();
+      }
     });
     this.cartService.search.subscribe((val: any) => {
       this.searchKey = val;
@@ -47,5 +50,15 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.apiUnsubscribe.unsubscribe();
+    this.onRouteChange.unsubscribe();
+  }
+
+  setCurrentProduct() {
+    const product: IProduct | undefined = this.productList.find((item) => {
+      const productUrl: string = this.router.url.split('/')[2];
+      return item.link === productUrl;
+    });
+    if (product) this.product = product;
+    else this.router.navigate(['/products']);
   }
 }
