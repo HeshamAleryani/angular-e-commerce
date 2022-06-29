@@ -3,7 +3,7 @@
     <i class="bars big icon"></i>
   </div>
   <div class="logo-container">
-    <h1><span style="color:rgb(123, 24, 138);">E-</span>commerce </h1>
+    <h1 routerLink="."><span style="color:rgb(123, 24, 138);">E-</span>commerce </h1>
   </div>
   <div class="search-container">
     <div class="ui large input">
@@ -13,7 +13,7 @@
   <div class="menu-container">
     <ul>
       <li>
-        <a href="/">Home</a>
+        <a href="#/products">Home</a>
       </li>
       <li>
         <a routerLink="blog" href="">Blog</a>
@@ -58,7 +58,7 @@
       </div>
       <ul class="">
         <li>
-          <a (click)="toggleMenu()" href="/">Home</a>
+          <a (click)="toggleMenu()" href="#/products">Home</a>
         </li>
         <li>
           <a routerLink="blog" (click)="toggleMenu()" href="/">Blog </a>
