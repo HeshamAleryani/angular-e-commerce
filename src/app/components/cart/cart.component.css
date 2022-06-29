@@ -388,3 +388,9 @@ a:hover {
   background: #92e6e5;
   ;
 }
+
+@media only screen and (max-width: 980px) {
+  .container {
+    width: 680px;
+  }
+}

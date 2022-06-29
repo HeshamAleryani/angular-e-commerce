@@ -1,17 +1,28 @@
 <swiper [spaceBetween]="30" [centeredSlides]="true" [autoplay]="{
-    delay: 2500,
+    delay: 5000,
     disableOnInteraction: true
   }" [pagination]="{
     clickable: true
   }" [navigation]="true" class="mySwiper" [loop]="true">
   <ng-template swiperSlide class="first-img">
-    <div>
-      <img style="width:250px
-       ; " src="../../../assets/fashion2.png" />
+    <div class="wrapper">
+      <div class="static-txt">
+        Explore
+      </div>
+      <ul class="dynamic-txts">
+        <li><span> discount....</span></li>
+        <li><span> service sdfsd sdf sdfasdf</span></li>
+        <li><span> product </span></li>
+        <li><span> quality </span></li>
+
+
+
+      </ul>
     </div>
+
   </ng-template>
 
-  <ng-template swiperSlide class="second-img">
+  <ng-template swiperSlide class=" second-img">
     <div>
       <img src="../../../assets/pngfind.com-electronics-items-png-891691.png" /></div>
   </ng-template>

@@ -1,10 +1,6 @@
 <main class="container">
   <div class="left-column">
-    <img
-      style="height: 300px; width: 300px; margin: 100px"
-      src="{{ product.image }}"
-      alt=""
-    />
+    <img src="{{ product.image }}" alt="" />
   </div>
 
   <div class="right-column">
@@ -18,14 +14,34 @@
 
     <div class="product-price">
       <span>{{ product.price }}lei</span>
-      <button
-        (click)="addToCart(product)"
-        (click)="showToatr()"
-        class="ui inverted grey button"
-        style="border-radius: 5rem; color: black"
-      >
+      <button (click)="addToCart(product)" (click)="showToatr()" class="ui inverted grey button"
+        style="border-radius: 5rem; color: black">
         Add to Cart
       </button>
     </div>
   </div>
+
 </main>
+<div class="mobile-interface">
+  <div class="product-title">
+    <h1>{{ product.title }}</h1>
+    <span>{{ product.category }}</span>
+
+  </div>
+  <div class="img-container"> <img src="{{ product.image }}" alt="" /></div>
+
+  <div class="product-description">
+    <p>
+      {{ product.description }}
+    </p>
+  </div>
+  <div class="product-price">
+
+    <span> Price:{{ product.price }}lei</span>
+    <button (click)="addToCart(product)" (click)="showToatr()" class="ui inverted grey button"
+      style="border-radius: 5rem; color: black">
+      Add to Cart
+    </button>
+  </div>
+
+</div>

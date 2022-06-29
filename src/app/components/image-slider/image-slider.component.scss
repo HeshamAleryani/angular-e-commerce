@@ -50,3 +50,54 @@
 .third-img.swiper-slide {
   background: #b8a9c9;
 }
+.swiper-button-next,
+.swiper-button-prev {
+}
+.wrapper {
+  display: inline-flex;
+}
+.wrapper .static-txt {
+  font-size: 40px;
+  color: whitesmoke;
+}
+.wrapper .dynamic-txts {
+  margin-left: 15px;
+  line-height: 90px;
+  height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li {
+  list-style: none;
+  font-size: 30px;
+  color: #fc6d6d;
+  font-weight: bold;
+  position: relative;
+  top: 0;
+
+  animation: slide 4s steps(4) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+}
+.dynamic-txts li span::after {
+  margin-top: 25px;
+  content: "";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  background: rgb(64 64 161);
+  width: 100%;
+  border-left: 2px solid #fc6d6d;
+  animation: typing 1s steps(30) infinite;
+}
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 -30 0 30;
+  }
+}

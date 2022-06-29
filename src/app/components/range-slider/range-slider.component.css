@@ -1,4 +1,6 @@
-.range-slider-container {}
+.range-slider-container {
+  width: 150px;
+}
 
 .range-slider-container .group {
   padding: 0 0 0 5px;

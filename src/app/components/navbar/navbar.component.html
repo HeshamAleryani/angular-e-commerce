@@ -3,7 +3,7 @@
     <i class="bars big icon"></i>
   </div>
   <div class="logo-container">
-    <h1>E-commerce <span> today</span></h1>
+    <h1><span style="color:rgb(123, 24, 138);">E-</span>commerce </h1>
   </div>
   <div class="search-container">
     <div class="ui large input">
@@ -41,7 +41,7 @@
 
       <i routerLink="cart" class="shopping cart icon" class="shopping cart big icon"></i>
 
-      <span> {{ totalItem }}
+      <span s> {{ totalItem }}
       </span>
     </div>
   </div>
@@ -58,10 +58,10 @@
       </div>
       <ul class="">
         <li>
-          <a href="/">Home</a>
+          <a (click)="toggleMenu()" href="/">Home</a>
         </li>
         <li>
-          <a href="/">Blog </a>
+          <a routerLink="blog" (click)="toggleMenu()" href="/">Blog </a>
         </li>
       </ul>
 

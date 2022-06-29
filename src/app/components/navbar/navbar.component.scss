@@ -33,16 +33,13 @@ nav {
   .logo-container {
     cursor: pointer;
 
-    width: 25%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     h1 {
       color: white;
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      span {
-        color: rgb(110, 21, 62);
-      }
     }
   }
   .search-container {
@@ -51,9 +48,13 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    input {
+      border-radius: 20px;
+      width: 100%;
+    }
   }
   .menu-container {
-    width: 30%;
+    width: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +66,9 @@ nav {
       flex-wrap: wrap;
       gap: 20px;
       width: 100%;
-
+      li a:hover {
+        color: rgb(6, 5, 5);
+      }
       li {
         a {
           color: white;
@@ -99,6 +102,7 @@ nav {
         width: 20px;
         height: 20px;
         text-align: center;
+        font-weight: bold;
       }
     }
   }
@@ -124,6 +128,9 @@ nav {
     }
     .search-container {
       display: none;
+    }
+    .ui.input {
+      width: 116px;
     }
     .menu-container {
       display: none;
@@ -172,10 +179,6 @@ nav {
         display: flex;
         justify-content: center;
         width: 100%;
-
-        .input {
-          width: 50%;
-        }
       }
     }
   }
@@ -200,8 +203,10 @@ nav {
       justify-content: space-around;
       flex-direction: column;
       align-items: center;
+
       li {
         margin: 30px 0 30px 0;
+
         a {
           color: white;
           font-weight: bold;
@@ -221,8 +226,11 @@ nav {
 }
 i.big.big.big.icon,
 i.big.big.big.icons {
-  font-size: 1.5rem;
+  font-size: 2rem;
   vertical-align: middle;
+}
+.bars.big.icon {
+  padding-left: 5px;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
