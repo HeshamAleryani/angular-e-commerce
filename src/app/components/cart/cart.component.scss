@@ -8,19 +8,17 @@
   margin: 25px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: large;
 }
 
 .center {
-
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   font-size: large;
-
 }
 
 .center img {
@@ -30,7 +28,6 @@
 .fluid.ui.button {
   font-size: large;
   background-color: #31cfce;
-  ;
 }
 
 h4 {
@@ -41,14 +38,13 @@ h3 {
   font-size: larger;
 }
 
-
 .ui.table {
   margin: 20px;
   padding: 20px;
   max-width: 95%;
   width: 95%;
   border-radius: 1.285714rem;
-  border: 11px solid rgba(34, 36, 38, .15);
+  border: 11px solid rgba(241, 243, 246, 0.15);
 }
 
 body {
@@ -85,18 +81,16 @@ a {
   color: #000;
   text-decoration: none;
 
-  -webkit-transition: color .2s linear;
-  -moz-transition: color .2s linear;
-  -ms-transition: color .2s linear;
-  -o-transition: color .2s linear;
-  transition: color .2s linear;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
 }
 
 a:hover {
   color: #31cfce;
 }
-
-
 
 #site-header h1 span.last-span {
   background: #fff;
@@ -104,11 +98,11 @@ a:hover {
   position: absolute;
   left: 217px;
 
-  -webkit-transition: all .2s linear;
-  -moz-transition: all .2s linear;
-  -ms-transition: all .2s linear;
-  -o-transition: all .2s linear;
-  transition: all .2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 #site-header h1:hover span.last-span,
@@ -123,7 +117,7 @@ a:hover {
 }
 
 .container {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0 auto;
   width: 980px;
 }
@@ -140,11 +134,11 @@ a:hover {
   color: #53b5aa;
   text-decoration: none;
 
-  -webkit-transition: color .2s linear;
-  -moz-transition: color .2s linear;
-  -ms-transition: color .2s linear;
-  -o-transition: color .2s linear;
-  transition: color .2s linear;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
 }
 
 #cart a:hover {
@@ -163,11 +157,11 @@ a:hover {
   height: 195px;
   position: relative;
 
-  -webkit-transition: margin .2s linear, opacity .2s linear;
-  -moz-transition: margin .2s linear, opacity .2s linear;
-  -ms-transition: margin .2s linear, opacity .2s linear;
-  -o-transition: margin .2s linear, opacity .2s linear;
-  transition: margin .2s linear, opacity .2s linear;
+  -webkit-transition: margin 0.2s linear, opacity 0.2s linear;
+  -moz-transition: margin 0.2s linear, opacity 0.2s linear;
+  -ms-transition: margin 0.2s linear, opacity 0.2s linear;
+  -o-transition: margin 0.2s linear, opacity 0.2s linear;
+  transition: margin 0.2s linear, opacity 0.2s linear;
 }
 
 .product img {
@@ -184,7 +178,7 @@ a:hover {
 }
 
 .product header {
-  background: #000;
+  background: rgb(255, 255, 255);
   margin: 0 1% 20px 0;
   overflow: hidden;
   padding: 0;
@@ -194,7 +188,7 @@ a:hover {
 }
 
 .product header:hover img {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .product header:hover h3 {
@@ -203,7 +197,6 @@ a:hover {
 
 .product header h3 {
   background: #186767;
-  ;
   color: #fff;
   font-size: 22px;
   font-weight: 300;
@@ -215,11 +208,11 @@ a:hover {
   right: 0;
   left: 0;
 
-  -webkit-transition: bottom .2s linear;
-  -moz-transition: bottom .2s linear;
-  -ms-transition: bottom .2s linear;
-  -o-transition: bottom .2s linear;
-  transition: bottom .2s linear;
+  -webkit-transition: bottom 0.2s linear;
+  -moz-transition: bottom 0.2s linear;
+  -ms-transition: bottom 0.2s linear;
+  -o-transition: bottom 0.2s linear;
+  transition: bottom 0.2s linear;
 }
 
 .remove {
@@ -236,7 +229,6 @@ a:hover {
 
 .product h1 {
   color: #92e6e5;
-  ;
   font-size: 25px;
   font-weight: 300;
   margin: 17px 0 20px 0;
@@ -260,8 +252,7 @@ a:hover {
 }
 
 .product footer .full-price {
-  background: #92e6e5;
-  ;
+  background: #2b7c85;
   color: #fff;
   float: right;
   font-size: 22px;
@@ -270,11 +261,11 @@ a:hover {
   margin: 0;
   padding: 0 30px;
 
-  -webkit-transition: margin .15s linear;
-  -moz-transition: margin .15s linear;
-  -ms-transition: margin .15s linear;
-  -o-transition: margin .15s linear;
-  transition: margin .15s linear;
+  -webkit-transition: margin 0.15s linear;
+  -moz-transition: margin 0.15s linear;
+  -ms-transition: margin 0.15s linear;
+  -o-transition: margin 0.15s linear;
+  transition: margin 0.15s linear;
 }
 
 .qt,
@@ -299,18 +290,16 @@ a:hover {
   font-weight: 300;
   height: 100%;
   padding: 0 20px;
-  -webkit-transition: background .2s linear;
-  -moz-transition: background .2s linear;
-  -ms-transition: background .2s linear;
-  -o-transition: background .2s linear;
-  transition: background .2s linear;
+  -webkit-transition: background 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  -ms-transition: background 0.2s linear;
+  -o-transition: background 0.2s linear;
+  transition: background 0.2s linear;
 }
 
 .qt-plus:hover,
 .qt-minus:hover {
   background: #92e6e5;
-  ;
-  ;
   color: #fff;
   cursor: pointer;
 }
@@ -363,8 +352,7 @@ a:hover {
 }
 
 .btn {
-  background: #186767;
-  ;
+  background: #2b7c85;
   border: 1px solid #999;
   border-style: none none solid none;
   cursor: pointer;
@@ -376,21 +364,48 @@ a:hover {
   width: 290px;
   text-align: center;
 
-  -webkit-transition: all .2s linear;
-  -moz-transition: all .2s linear;
-  -ms-transition: all .2s linear;
-  -o-transition: all .2s linear;
-  transition: all .2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .btn:hover {
   color: #fff;
-  background: #92e6e5;
-  ;
+  background: #2b7c85;
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 950px) {
   .container {
-    width: 680px;
+    width: auto;
+    .section {
+      width: 360px;
+    }
+  }
+  .product header {
+    width: auto;
+    display: flex;
+    align-items: center;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .product header {
+    display: flex;
+    align-items: center;
+  }
+  .product header a h3 {
+    font-size: 5px;
+    line-height: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  .content {
+    font-size: 10px;
+    h1 {
+      font-size: 13px;
+    }
   }
 }

@@ -1,4 +1,4 @@
-<ng-container *ngIf="products.length != 0">
+<ng-container class="wrapper" *ngIf="products.length != 0">
   <header id="site-header">
     <div class="container">
       <h1>Shopping cart</h1>
@@ -12,7 +12,7 @@
           <a (click)="removeItem(item)" class="remove">
             <img src="{{ item.image }}" alt="" />
 
-            <h3>Remove product</h3>
+            <h3>Remove</h3>
           </a>
         </header>
 
@@ -51,10 +51,7 @@
   <div class="ui card">
     <div class="content"></div>
     <div class="center">
-      <img
-        src="https://freepikpsd.com/file/2019/10/empty-cart-png-Transparent-Images.png"
-        alt=""
-      />
+      <img src="https://freepikpsd.com/file/2019/10/empty-cart-png-Transparent-Images.png" alt="" />
       <h4>Add to the product now!</h4>
       <button routerLink="/products" class="positive fluid ui button">
         Check our Shop

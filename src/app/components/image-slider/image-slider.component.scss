@@ -42,13 +42,13 @@
   display: flex;
 }
 .first-img.swiper-slide {
-  background: #4040a1;
+  background: #f2f2f7;
 }
 .second-img.swiper-slide {
-  background: #e06377;
+  background: #f2f2f7;
 }
 .third-img.swiper-slide {
-  background: #b8a9c9;
+  background: #f2f2f7;
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -58,7 +58,7 @@
 }
 .wrapper .static-txt {
   font-size: 40px;
-  color: whitesmoke;
+  color: rgb(4, 4, 4);
 }
 .wrapper .dynamic-txts {
   margin-left: 15px;
@@ -90,9 +90,9 @@
   position: absolute;
   height: 100%;
   left: 0;
-  background: rgb(64 64 161);
+  background: #f2f2f7;
   width: 100%;
-  border-left: 2px solid #fc6d6d;
+  border-left: 2px solid #7a7272;
   animation: typing 1s steps(30) infinite;
 }
 @keyframes typing {

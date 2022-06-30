@@ -113,6 +113,13 @@ a:focus {
 }
 
 @media only screen and (max-width: 1200px) {
+  .ui.card {
+    width: 249px;
+    height: 420px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 3px;
+  }
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -125,7 +132,7 @@ a:focus {
   }
   #veticalmenu1 {
     position: absolute;
-    z-index: 555;
+    z-index: 9999;
     width: 40%;
     right: 0;
   }
