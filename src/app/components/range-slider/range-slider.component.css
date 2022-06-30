@@ -1,5 +1,5 @@
 .range-slider-container {
-  width: 150px;
+  width: 150PX;
 }
 
 .range-slider-container .group {
@@ -9,7 +9,8 @@
 }
 
 .range-slider-container .group input {
-  max-width: 50%;
+  max-width: 55%;
+  margin-left: 35px;
 }
 
 ::ng-deep .ngx-slider {
@@ -23,4 +24,14 @@
 ::ng-deep .range-slider .ngx-slider .ngx-slider-selection {
   background: #070707 !important;
 
+}
+
+.ui.form input {
+  margin-left: 35px;
+}
+
+@media only screen and (max-width: 990px) {
+  .range-slider-container {
+    width: 110px;
+  }
 }

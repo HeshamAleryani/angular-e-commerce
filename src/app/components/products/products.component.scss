@@ -113,6 +113,9 @@ a:focus {
 }
 
 @media only screen and (max-width: 1200px) {
+  .ui.form input {
+    margin-left: 35px;
+  }
   .ui.card {
     width: 249px;
     height: 420px;
@@ -123,17 +126,16 @@ a:focus {
   .wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
   }
   #veticalmenu2 {
     position: absolute;
     z-index: 9999;
-    width: 40%;
     left: 0;
   }
   #veticalmenu1 {
     position: absolute;
     z-index: 9999;
-    width: 40%;
     right: 0;
   }
 
