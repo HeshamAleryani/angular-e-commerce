@@ -1,5 +1,5 @@
 .range-slider-container {
-  width: 150PX;
+  width: 150px;
 }
 
 .range-slider-container .group {
@@ -9,12 +9,18 @@
 }
 
 .range-slider-container .group input {
-  max-width: 55%;
-  margin-left: 35px;
+  max-width: 54%;
+  margin-left: 13px;
 }
 
 ::ng-deep .ngx-slider {
-  z-index: 0;
+  z-index: 99;
+
+}
+
+.ngx-slider {
+  width: 250px;
+
 }
 
 ::ng-deep .range-slider .ngx-slider .ngx-slider-pointer {
@@ -30,8 +36,19 @@
   margin-left: 35px;
 }
 
-@media only screen and (max-width: 990px) {
-  .range-slider-container {
-    width: 110px;
+@media only screen and (max-width: 715px) {
+  .ngx-slider {
+    width: 150px;
   }
+}
+
+@media only screen and (max-width: 530px) {
+  .range-slider-container {
+    width: 100px;
+  }
+
+  .ngx-slider {
+    width: 120px;
+  }
+
 }
