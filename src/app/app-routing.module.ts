@@ -1,3 +1,4 @@
+import { IssueComponent } from './components/issue/issue.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ProductComponent } from './components/products/product/product.component';
 import { CartComponent } from './components/cart/cart.component';
@@ -13,6 +14,8 @@ const routes: Routes = [
   },
   { path: 'cart', component: CartComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'issue', component: IssueComponent },
+
   {
     path: 'products/:id',
     component: ProductComponent,

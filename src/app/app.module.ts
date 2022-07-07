@@ -20,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { SwiperModule } from 'swiper/angular';
 import { NgxHideOnScrollModule } from 'ngx-hide-on-scroll';
+import { IssueComponent } from './components/issue/issue.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { NgxHideOnScrollModule } from 'ngx-hide-on-scroll';
     FooterComponent,
     RangeSliderComponent,
     ImageSliderComponent,
+    IssueComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+<div class="container">
+  <form (ngSubmit)="submit()" id="contact" action="" method="post">
+    <h3>Submit issue</h3>
+    <h4>Contact us for any issue</h4>
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1" required autofocus ngModel>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" required ngModel>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required ngModel>
+    </fieldset>
+
+    <fieldset>
+      <textarea placeholder="Type your message here...." tabindex="5" required ngModel></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+
+  </form>
+</div>
