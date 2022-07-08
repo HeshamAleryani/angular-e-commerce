@@ -1,23 +1,30 @@
-<div class="container">
-  <form (ngSubmit)="submit()" id="contact" action="" method="post">
-    <h3>Submit issue</h3>
-    <h4>Contact us for any issue</h4>
-    <fieldset>
-      <input placeholder="Your name" type="text" tabindex="1" required autofocus ngModel>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Your Email Address" type="email" tabindex="2" required ngModel>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required ngModel>
-    </fieldset>
+<h1>Submit issue</h1>
+<form class="ui form">
+  <div class="field">
+    <label>Name</label>
+    <input name="name" type="text">
+  </div>
+  <div class="field">
+    <div class="field">
+      <label>E-mail</label>
+      <input name="email" type="text">
+    </div>
+  </div>
+  <div class="field">
+    <label>Name</label>
+    <textarea name="paragraph" type="text"></textarea>
+  </div>
+  <div class="ui submit button">Submit</div>
+  <div class="ui error message"></div>
+</form>
 
-    <fieldset>
-      <textarea placeholder="Type your message here...." tabindex="5" required ngModel></textarea>
-    </fieldset>
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-    </fieldset>
+<div *ngIf="isSuccess">
 
-  </form>
+  <div class="ui success message">
+    <i (click)="isSuccess = false" class="close icon"></i>
+    <div class="header">
+      Thank you for sending us
+    </div>
+    <p>Your issue has been reported our team will get back to as soon as possible! </p>
+  </div>
 </div>
