@@ -207,6 +207,8 @@ a:hover {
   bottom: -50px;
   right: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
 
   -webkit-transition: bottom 0.2s linear;
   -moz-transition: bottom 0.2s linear;
@@ -223,7 +225,6 @@ a:hover {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   height: 140px;
-  padding: 0 20px;
   width: 75%;
 }
 
@@ -405,7 +406,10 @@ a:hover {
   .content {
     font-size: 10px;
     h1 {
-      font-size: 13px;
+      font-size: 20px;
     }
+  }
+  .product footer .full-price {
+    font-size: 14px;
   }
 }
